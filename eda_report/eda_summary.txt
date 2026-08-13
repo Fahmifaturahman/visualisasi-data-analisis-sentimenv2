@@ -1,0 +1,107 @@
+============================================================
+LAPORAN CLEANING + EDA
+Skripsi Fahmi Faturahman — STMIK Bandung 2026
+============================================================
+
+[ DATA KOMENTAR ]
+  Sebelum cleaning :   21,611
+  Sesudah cleaning :   18,905
+  Dihapus          :    2,706
+  Data tersisa     :    87.5%
+
+[ DATA VIDEO ]
+  Sebelum cleaning :      162
+  Sesudah cleaning :      162
+  Dihapus          :        0
+
+[ DISTRIBUSI TOPIK DAKWAH (VIDEO BERSIH) ]
+  Akhlak                                29  (17.9%)
+  Motivasi Islam                        26  (16.0%)
+  Fiqih                                 14  (8.6%)
+  Akidah                                11  (6.8%)
+  Sirah Nabawiyah                        8  (4.9%)
+  Sosial Kemasyarakatan                  6  (3.7%)
+  Pendidikan Islam                       4  (2.5%)
+  Tafsir Quran                           4  (2.5%)
+  Kesehatan Islam                        3  (1.9%)
+  Hadits                                 2  (1.2%)
+  Sikap Terhadap Fitnah Dan Hinaan       1  (0.6%)
+  Kisah Pemuda Nyasar Supranatural       1  (0.6%)
+  Kelelahan, Self-Care, Keseimbangan Diri    1  (0.6%)
+  Kekuatan Perempuan Hadapi Ujian        1  (0.6%)
+  Etika Berbicara, Mentalitas, Dan Ekspektasi    1  (0.6%)
+  Pengalaman Mantan Ahli Santet          1  (0.6%)
+  Klarifikasi, Peran Ustadz, Prinsip Dakwah    1  (0.6%)
+  Penggunaan Karunia Dan Penggantian Allah    1  (0.6%)
+  Pembersihan Hati, Fitrah Manusia, I'Tirof    1  (0.6%)
+  Kekuatan Batin Menghadapi Masalah      1  (0.6%)
+  Fitnah Akhir Zaman, Elite Global       1  (0.6%)
+  Keseruan Ustadz Syafiq Memancing Ikan    1  (0.6%)
+  Teknologi, Keagungan Allah, Kerendahan Hati    1  (0.6%)
+  Kewajiban Nafkah Setelah Perceraian    1  (0.6%)
+  Urgensi Kesempurnaan Amal Shalih       1  (0.6%)
+  Hidup Sehat Ala Zaidul Akbar           1  (0.6%)
+  Gagal Ginjal Dan Pemanis Buatan        1  (0.6%)
+  Abdurrahman Ad-Dakhil: Tekad & Visi    1  (0.6%)
+  Nasihat Imam Nawawi Untuk Ustadz       1  (0.6%)
+  Tawakal, Masa Depan, Husnudzon         1  (0.6%)
+  Ciri Dan Bahaya Kemunafikan            1  (0.6%)
+  Spesialisasi, Hobi, Dan Dakwah         1  (0.6%)
+  Memilih Pasangan Menurut Islam         1  (0.6%)
+  Pengasuhan Positif Dan Koneksi Anak    1  (0.6%)
+  Tata Cara Salat Tahajud                1  (0.6%)
+  Poligami, Murtad, Istikharah, Konsultasi Agama    1  (0.6%)
+  Poligami, Kepemimpinan, Pengaruh Visual, Humor    1  (0.6%)
+  Peran Ibu Sebagai Madrasah Utama       1  (0.6%)
+  Thr Berfaedah, Bukan Mubazir           1  (0.6%)
+  Ramadan, Netizen, Emosi, Privasi, Ibadah    1  (0.6%)
+  Amalan Pelunas Utang Dan Hajat         1  (0.6%)
+  Cinta Rasulullah Kepada Umatnya        1  (0.6%)
+  Keseimbangan Takut Dan Harap           1  (0.6%)
+  Ustaz Effendi Tersangka Kasus Kdrt     1  (0.6%)
+  Waktu, Kematian, Refleksi Diri         1  (0.6%)
+  Memaknai Ujian Dan Pertumbuhan Spiritual    1  (0.6%)
+  Kesiapan Hati, Pertemuan Tak Terduga    1  (0.6%)
+  Persiapan Menghadapi Perjumpaan Ilahi    1  (0.6%)
+  Jiwa, Watak, Dan Neurosains Islami     1  (0.6%)
+  Kecerdasan Dan Ketangguhan Wanita      1  (0.6%)
+  Kritik Pbnu & Isu Nasab                1  (0.6%)
+  Kritik Radikalisme, Pancasila, Habib Rizieq    1  (0.6%)
+  Prioritas Amal Baik Dalam Islam        1  (0.6%)
+  Pembukaan Acara Dan Pengumuman Komunitas    1  (0.6%)
+  Zikir, Asmaul Husna, Salawat           1  (0.6%)
+  Titipan Allah, Akal, Kesombongan       1  (0.6%)
+  Menjaga Aib Dan Menghindari Ghibah     1  (0.6%)
+  Optimisme Dakwah Di Medsos             1  (0.6%)
+  Kristologi, Perbandingan Agama, Yesus/Isa    1  (0.6%)
+  Tetangga, Iri Dengki, Ikhtiar, Kesuksesan, Pengorbanan    1  (0.6%)
+  Klarifikasi Dan Bahaya Al-Zaytun       1  (0.6%)
+  Sifat Bangsa Yahudi Dan Konflik        1  (0.6%)
+  Menghadapi Anak Durhaka Dan Berkah     1  (0.6%)
+  Generasi Rabbani, Ramadan, Suri Tauladan    1  (0.6%)
+  Dunia Hanyalah Titipan Allah           1  (0.6%)
+
+[ WORD2VEC — WORD EMBEDDING ]
+  Ukuran vocabulary   : 12,835 kata unik
+  Dimensi vektor      : 100
+  Shape vektor komentar: (18905, 100)
+  Model disimpan      : /content/drive/MyDrive/skripsi_dakwah_bandung/word2vec_dakwah.model
+  Vektor disimpan     : /content/drive/MyDrive/skripsi_dakwah_bandung/comment_vectors_w2v.npy
+
+[ TOP 10 PENCERAMAH — JUMLAH KOMENTAR ]
+   1. Ustadz Muhammad Faizar Hidayatullah       890
+   2. Ustadz Adi Hidayat                        885
+   3. Ustadz Felix Siauw                        883
+   4. Ustadz Das'ad Latif                       839
+   5. Gus Fuad Plered (KH. Fuad Thalib)         814
+   6. Ustadz Abdul Somad (UAS)                  772
+   7. Ustadz Zulkifli Muhammad Ali              741
+   8. Habib Rifky Alaydrus                      699
+   9. Ustadzah Irena Handono                    669
+  10. Ustadz Hilman Fauzi                       639
+
+[ OUTPUT FILE ]
+  Komentar bersih : /content/drive/MyDrive/skripsi_dakwah_bandung/clean_data_komentar.csv
+  Video bersih    : /content/drive/MyDrive/skripsi_dakwah_bandung/clean_data_video.csv
+  Grafik EDA      : /content/drive/MyDrive/skripsi_dakwah_bandung/eda_report/
+============================================================

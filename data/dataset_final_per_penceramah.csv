@@ -1,0 +1,55 @@
+﻿,channel_name,total_komentar,jumlah_positif,jumlah_negatif,jumlah_netral,pct_positif,pct_negatif,pct_netral,sentimen_dominan
+1,Ustadz Erick Yusuf,3,3,0,0,100.0,0.0,0.0,Positif
+2,Ustadz Aam Amiruddin (Percikan Iman),43,36,6,1,83.7,14.0,2.3,Positif
+3,Ustadz Handy Bonny,418,317,32,69,75.8,7.7,16.5,Positif
+4,Ustadz Abdul Somad (UAS),772,584,71,117,75.6,9.2,15.2,Positif
+5,Ustadzah Irena Handono,669,484,102,83,72.3,15.2,12.4,Positif
+6,Bunda Imas Karyamah,40,28,4,8,70.0,10.0,20.0,Positif
+7,Ustadz Subhan Bawazier,40,28,8,4,70.0,20.0,10.0,Positif
+8,Ustadzah Qotrunnada,573,399,92,82,69.6,16.1,14.3,Positif
+9,Buya Yahya (Al-Bahjah),531,361,77,93,68.0,14.5,17.5,Positif
+10,Ustadz Ucu Najmudin,82,55,11,16,67.1,13.4,19.5,Positif
+11,Ustadzah Halimah Alaydrus,563,376,85,102,66.8,15.1,18.1,Positif
+12,Ustadz Nuzul Dzikri,41,27,8,6,65.9,19.5,14.6,Positif
+13,Ustadz Adi Hidayat,885,576,220,89,65.1,24.9,10.1,Positif
+14,Ustadzah Yati Priyati,524,334,82,108,63.7,15.6,20.6,Positif
+15,Ustadz Syam El Marusy,294,180,56,58,61.2,19.0,19.7,Positif
+16,Habib Umar bin Hafidz,335,204,83,48,60.9,24.8,14.3,Positif
+17,Aa Gym (KH. Abdullah Gymnastiar),590,358,113,119,60.7,19.2,20.2,Positif
+18,dr. Aisah Dahlan,442,265,98,79,60.0,22.2,17.9,Positif
+19,Gus Iqdam,486,291,70,125,59.9,14.4,25.7,Positif
+20,Ustadz Bendri Jaisyurrahman,120,69,33,18,57.5,27.5,15.0,Positif
+21,Ustadz Wijayanto,23,13,7,3,56.5,30.4,13.0,Positif
+22,Ustadz Das'ad Latif,838,472,182,184,56.3,21.7,22.0,Positif
+23,Ustadz Syafiq Riza Basalamah,485,271,99,115,55.9,20.4,23.7,Positif
+24,Ustadz Oemar Mita (Syameela) ,376,206,107,63,54.8,28.5,16.8,Positif
+25,Ustadz Maulana,214,115,65,34,53.7,30.4,15.9,Positif
+26,Ustadz Rahmat Baequni,222,117,72,33,52.7,32.4,14.9,Positif
+27,Habib Rifky Alaydrus,698,367,161,170,52.6,23.1,24.4,Positif
+28,Ustadz Firanda Andirja,299,155,101,43,51.8,33.8,14.4,Positif
+29,Ustadz Khalid Basalamah,33,17,9,7,51.5,27.3,21.2,Positif
+30,Ustadz Hilman Fauzi,638,324,176,138,50.8,27.6,21.6,Positif
+31,Ustadz Zulkifli Muhammad Ali,741,375,226,140,50.6,30.5,18.9,Positif
+32,Ustadzah Haneen Akira,6,3,1,2,50.0,16.7,33.3,Positif
+33,Ustadz Salim A. Fillah,194,97,62,35,50.0,32.0,18.0,Positif
+34,Ustadzah Mumpuni Handayayekti,458,226,114,118,49.3,24.9,25.8,Positif
+35,Ustadz Dennis Lim (Koh Dennis),390,180,97,113,46.2,24.9,29.0,Positif
+36,Ustadz Edgar Hamas,315,141,104,70,44.8,33.0,22.2,Positif
+37,Ustadz Zacky Mirza,45,20,6,19,44.4,13.3,42.2,Positif
+38,Ustadzah Oki Setiana Dewi,193,84,70,39,43.5,36.3,20.2,Positif
+39,Ustadz Yusuf Burhanudin,14,6,4,4,42.9,28.6,28.6,Positif
+40,Ustadz Agam Fachrul,14,6,2,6,42.9,14.3,42.9,Positif
+41,Ustadzah Hj. Aah Nurul Muhibbah,7,3,1,3,42.9,14.3,42.9,Positif
+42,Gus Baha (KH. Ahmad Bahauddin Nursalim),141,60,21,60,42.6,14.9,42.6,Positif
+43,KH. Jujun Junaedi,267,110,87,70,41.2,32.6,26.2,Positif
+44,Ustadz Hanan Attaki (Shift Pemuda Hijrah),397,159,179,59,40.1,45.1,14.9,Negatif
+45,Dr. Saiful Islam Mubarak,28,11,14,3,39.3,50.0,10.7,Negatif
+46,Gus Fuad Plered (KH. Fuad Thalib),814,318,260,236,39.1,31.9,29.0,Positif
+47,Dr. Zaidul Akbar (Jurus Sehat Rasulullah),487,189,201,97,38.8,41.3,19.9,Negatif
+48,Ustadz Muhammad Faizar Hidayatullah ,890,345,417,128,38.8,46.9,14.4,Negatif
+49,"Ustad Taufiqurrahman, SQ",16,6,1,9,37.5,6.2,56.2,Netral
+50,Ustadz Evie Effendi,9,3,4,2,33.3,44.4,22.2,Negatif
+51,Ustadz Felix Siauw,883,280,474,129,31.7,53.7,14.6,Negatif
+52,Mamah Dedeh,398,123,183,92,30.9,46.0,23.1,Negatif
+53,KH. Athian Ali,622,183,318,121,29.4,51.1,19.5,Negatif
+54,Habib Husein Ja'far Al Hadar,290,70,99,121,24.1,34.1,41.7,Netral

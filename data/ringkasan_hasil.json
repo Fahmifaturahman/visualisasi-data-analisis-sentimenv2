@@ -1,0 +1,17 @@
+{
+  "model": "Multinomial Naive Bayes",
+  "alpha": 1.0,
+  "total_data": 18896,
+  "data_latih": 15116,
+  "data_uji": 3780,
+  "jumlah_fitur": 5000,
+  "accuracy": 0.6672,
+  "precision": 0.636,
+  "recall": 0.6672,
+  "f1_score": 0.6253,
+  "distribusi_label": {
+    "Positif": 10030,
+    "Negatif": 5175,
+    "Netral": 3691
+  }
+}
