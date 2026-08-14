@@ -1,4 +1,4 @@
-"""
+﻿"""
 ===========================================================================
 Sistem Analisis Sentimen Konten Dakwah Digital — Kota Bandung
 ===========================================================================
@@ -880,138 +880,6 @@ def page_pencarian() -> None:
             _render_wordcloud(teks_wc_v, judul=judul_video)
 
 
-# ------------------------------------------------------------------
-# 5.6  page_manajemen_penceramah — helpers
-# ------------------------------------------------------------------
-
-def _render_hapus_penceramah(df_penceramah: pd.DataFrame) -> None:
-    """Render UI untuk menghapus penceramah beserta semua data terkait."""
-    st.markdown("### 🗑️ Hapus Penceramah")
-    st.warning("⚠️ Menghapus penceramah akan menghapus **semua data terkait** dari seluruh file CSV.")
-
-    daftar = sorted(df_penceramah[KOLOM_CHANNEL].dropna().unique().tolist())
-    if not daftar:
-        st.info("Tidak ada penceramah yang tersedia untuk dihapus.")
-        return
-
-    nama = st.selectbox("Pilih penceramah yang akan dihapus:", options=daftar, key="select_hapus")
-    confirmed = st.checkbox(
-        f"Saya yakin ingin menghapus **{nama}** beserta semua data terkait",
-        key="confirm_hapus",
-    )
-
-    hapus_btn = st.button("🗑️ Hapus Penceramah", disabled=not confirmed, type="primary", key="btn_hapus")
-
-    if hapus_btn and confirmed:
-        try:
-            # Hapus dari dataset_final_per_penceramah.csv
-            df_p = pd.read_csv(PATH_CSV_PENCERAMAH)
-            df_p = df_p[df_p[KOLOM_CHANNEL] != nama]
-            df_p.to_csv(PATH_CSV_PENCERAMAH, index=False)
-
-            # Hapus dari hasil_prediksi_lengkap.csv (komentar)
-            df_k = pd.read_csv(PATH_CSV_KOMENTAR)
-            df_k = df_k[df_k[KOLOM_CHANNEL] != nama]
-            df_k.to_csv(PATH_CSV_KOMENTAR, index=False)
-
-            # Hapus dari dataset_final_video.csv
-            df_v = pd.read_csv(PATH_CSV_VIDEO)
-            df_v = df_v[df_v[KOLOM_CHANNEL] != nama]
-            df_v.to_csv(PATH_CSV_VIDEO, index=False)
-
-            st.cache_data.clear()
-            st.success(f"✅ Penceramah '{nama}' dan semua data terkait berhasil dihapus.")
-            st.rerun()
-        except Exception as e:
-            st.error(f"❌ Gagal menghapus penceramah: {e}")
-
-
-# ------------------------------------------------------------------
-# 5.6  page_manajemen_penceramah
-# ------------------------------------------------------------------
-def page_manajemen_penceramah() -> None:
-    st.title("⚙️ Manajemen Penceramah")
-
-    # Load data — needed to validate uniqueness and show current list
-    try:
-        _df_komentar, _df_video, df_penceramah = load_data()
-    except FileNotFoundError as e:
-        st.error(f"❌ {e}")
-        st.stop()
-    except Exception as e:
-        st.error(f"❌ Terjadi kesalahan saat memuat data: {e}")
-        st.stop()
-
-    tab_tambah, tab_hapus = st.tabs(["➕ Tambah Penceramah", "🗑️ Hapus Penceramah"])
-
-    # ------------------------------------------------------------------
-    # TAB 1: Tambah Penceramah
-    # ------------------------------------------------------------------
-    with tab_tambah:
-        st.subheader("Tambah Penceramah Baru")
-        st.markdown(
-            "Tambahkan nama channel penceramah baru ke dataset. "
-            "Data komentar dan video dapat ditambahkan melalui pipeline scraping."
-        )
-
-        nama = st.text_input(
-            "Nama channel penceramah baru:",
-            key="input_tambah_penceramah",
-            placeholder="Contoh: Ustadz Abdullah Gymnastiar",
-        )
-
-        if st.button("➕ Tambah Penceramah", key="btn_tambah"):
-            try:
-                # Re-read CSV fresh (bypassing cache) for up-to-date validation
-                df_p = pd.read_csv(PATH_CSV_PENCERAMAH)
-
-                # Validation 1: nama tidak boleh kosong
-                if not validasi_input(nama):
-                    st.error("❌ Nama penceramah tidak boleh kosong.")
-                    st.stop()
-
-                # Validation 2: nama belum ada di CSV
-                if nama.strip() in df_p["channel_name"].values:
-                    st.error(f"❌ Penceramah '{nama.strip()}' sudah ada.")
-                    st.stop()
-
-                # Build new row — include all columns from the CSV
-                new_row = {
-                    "Unnamed: 0":       len(df_p) + 1,
-                    "channel_name":     nama.strip(),
-                    "total_komentar":   0,
-                    "jumlah_positif":   0,
-                    "jumlah_negatif":   0,
-                    "jumlah_netral":    0,
-                    "pct_positif":      0.0,
-                    "pct_negatif":      0.0,
-                    "pct_netral":       0.0,
-                    "sentimen_dominan": "N/A",
-                }
-
-                # Append and save
-                df_updated = pd.concat(
-                    [df_p, pd.DataFrame([new_row])],
-                    ignore_index=True,
-                )
-                df_updated.to_csv(PATH_CSV_PENCERAMAH, index=False)
-
-                # Clear cache so the next load_data() picks up the new row
-                st.cache_data.clear()
-
-                st.success(f"✅ Penceramah '{nama.strip()}' berhasil ditambahkan.")
-                st.rerun()
-
-            except Exception as e:
-                st.error(f"❌ Gagal: {e}")
-
-    # ------------------------------------------------------------------
-    # TAB 2: Hapus Penceramah
-    # ------------------------------------------------------------------
-    with tab_hapus:
-        _render_hapus_penceramah(df_penceramah)
-
-
 # ---------------------------------------------------------------------------
 # MAIN — Routing Sidebar
 # ---------------------------------------------------------------------------
@@ -1025,7 +893,6 @@ def main() -> None:
             "Evaluasi Model",
             "Demo Klasifikasi Real-Time",
             "Pencarian Penceramah & Sentimen Video",
-            "Manajemen Penceramah",
         ],
     )
 
@@ -1039,8 +906,6 @@ def main() -> None:
         page_demo()
     elif pilihan == "Pencarian Penceramah & Sentimen Video":
         page_pencarian()
-    elif pilihan == "Manajemen Penceramah":
-        page_manajemen_penceramah()
 
 
 if __name__ == "__main__":

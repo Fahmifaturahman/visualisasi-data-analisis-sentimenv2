@@ -1,4 +1,4 @@
-# Implementation Plan: Sistem Analisis Sentimen Konten Dakwah Digital — Kota Bandung
+﻿# Implementation Plan: Sistem Analisis Sentimen Konten Dakwah Digital — Kota Bandung
 
 ## Overview
 
@@ -195,33 +195,10 @@ Bahasa: **Python 3.x + Streamlit**
   - Buat `README.md` di root proyek dengan: deskripsi singkat aplikasi, prasyarat Python dan versi, langkah instalasi dan menjalankan, daftar lima halaman, dan catatan bahwa patch `patch_cell12.py` perlu diterapkan ke Cell 12 Script 3 Colab sebelum mengekspor CSV
   - _Requirements: 1.7, 8.2_
 
-- [x] 18. Buat halaman `page_manajemen_penceramah()` — skeleton dan routing
-  - Tambahkan opsi `"Manajemen Penceramah"` ke `st.sidebar.radio` di `main()` (setelah opsi `"Pencarian Penceramah & Sentimen Video"`)
-  - Buat fungsi stub `page_manajemen_penceramah()` yang berisi `st.title("⚙️ Manajemen Penceramah")` dan `st.write("TODO")`
-  - Tambahkan routing di `main()` untuk mendispatch ke `page_manajemen_penceramah()` ketika opsi tersebut dipilih
-  - _Requirements: 1.2_
+~~Task 18-21 dihapus (fitur Manajemen Penceramah dihapus dari aplikasi)~~
 
-- [x] 19. Implementasikan fitur tambah penceramah
-  - Tambahkan `st.text_input("Nama channel penceramah baru:")` dan `st.button("➕ Tambah Penceramah")` di dalam `page_manajemen_penceramah()`
-  - Validasi input: nama tidak boleh kosong (`validasi_input()`) dan belum ada di kolom `channel_name` pada `data/dataset_final_per_penceramah.csv`; tampilkan `st.error()` jika validasi gagal
-  - Jika valid: append baris baru ke `data/dataset_final_per_penceramah.csv` dengan semua kolom numerik (`total_komentar`, `jumlah_positif`, `jumlah_negatif`, `jumlah_netral`, `pct_positif`, `pct_negatif`, `pct_netral`) diset ke `0` dan `sentimen_dominan` diset ke `"N/A"`; gunakan `pd.read_csv` → concat → `to_csv(index=False)`
-  - Panggil `st.cache_data.clear()` setelah menulis ke CSV, lalu panggil `st.rerun()` untuk memuat ulang data
-  - Tampilkan `st.success(f"Penceramah '{nama}' berhasil ditambahkan.")` atau `st.error(f"❌ Gagal menambahkan penceramah: {e}")` sesuai hasil
-  - _Requirements: 1.4, 1.6_
 
-- [x] 20. Implementasikan fitur hapus penceramah
-  - Tambahkan `st.selectbox("Pilih penceramah yang akan dihapus:", options=sorted(df_penceramah[KOLOM_CHANNEL].unique()))` di dalam `page_manajemen_penceramah()`
-  - Tambahkan `st.checkbox("Saya yakin ingin menghapus penceramah ini beserta semua data terkait")` sebagai konfirmasi; tombol hapus hanya aktif (`disabled=not confirmed`) ketika checkbox dicentang
-  - Pada penghapusan yang dikonfirmasi: hapus baris yang cocok dengan `channel_name` dari `data/dataset_final_per_penceramah.csv`; hapus semua baris yang cocok dari `data/dataset_final_komentar.csv` (alias `hasil_prediksi_lengkap.csv`) dan `data/dataset_final_video.csv`; gunakan pola `df[df[kolom] != nama].to_csv(path, index=False)` untuk setiap file
-  - Panggil `st.cache_data.clear()` dan `st.rerun()` setelah semua file diperbarui
-  - Tampilkan `st.success(f"Penceramah '{nama}' dan semua data terkait berhasil dihapus.")` atau `st.error(f"❌ Gagal menghapus penceramah: {e}")` sesuai hasil
-  - _Requirements: 1.4, 1.6_
 
-- [x] 21. Tulis unit tests untuk fitur manajemen penceramah di `tests/test_unit.py`
-  - Test tambah penceramah dengan nama duplikat: buat DataFrame sementara dengan satu baris penceramah, lalu assert bahwa logika validasi mendeteksi nama yang sudah ada dan menolak penambahan
-  - Test tambah penceramah dengan nama kosong: assert `validasi_input("")` mengembalikan `False` sehingga penambahan ditolak
-  - Test hapus penceramah: buat CSV sementara menggunakan `tmp_path` pytest berisi beberapa baris, jalankan logika penghapusan untuk satu `channel_name`, baca kembali CSV hasil, dan assert bahwa baris tersebut tidak ada lagi sementara baris lain tetap ada
-  - _Requirements: 1.6_
 
 - [x] 17. Reorganisasi struktur folder proyek
   - Pindahkan `hasil_model/dataset_final_*.csv` dan `hasil_model/hasil_prediksi_lengkap.csv` dan `hasil_model/ringkasan_hasil.json` → `data/`
@@ -262,10 +239,7 @@ Bahasa: **Python 3.x + Streamlit**
     { "id": 8, "tasks": ["13"] },
     { "id": 9, "tasks": ["14", "15.1", "15.2", "15.3", "15.4", "15.5", "15.6", "15.7"] },
     { "id": 10, "tasks": ["16"] },
-    { "id": 11, "tasks": ["17"] },
-    { "id": 12, "tasks": ["18"] },
-    { "id": 13, "tasks": ["19", "20"] },
-    { "id": 14, "tasks": ["21"] }
+    { "id": 11, "tasks": ["17"] }
   ]
 }
 ```
