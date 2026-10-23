@@ -1,0 +1,12 @@
+# =============================================================================
+# requirements-dev.txt — Dependensi untuk development & testing saja
+# =============================================================================
+# Install dengan:
+#   pip install -r requirements-dev.txt
+# =============================================================================
+
+-r requirements.txt
+
+# --- Testing ---
+hypothesis==6.104.2
+pytest==8.2.2

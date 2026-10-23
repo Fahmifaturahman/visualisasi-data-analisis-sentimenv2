@@ -1,0 +1,140 @@
+# =============================================================================
+# .gitignore — Sistem Analisis Sentimen Konten Dakwah Digital
+# =============================================================================
+# File ini menentukan apa yang TIDAK di-push ke GitHub.
+# Simpan file data besar di Google Drive / Kaggle / cloud storage.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# [1] FILE ARSIP BESAR — jangan push ke GitHub (>27 MB)
+# -----------------------------------------------------------------------------
+*.zip
+*.tar.gz
+*.tar
+*.7z
+*.rar
+
+
+# -----------------------------------------------------------------------------
+# [2] DATA MENTAH & BESAR (>1 MB) — terlalu besar untuk GitHub
+#     Simpan di Google Drive atau Kaggle Dataset
+# -----------------------------------------------------------------------------
+
+# Raw data (scraping mentah) — bisa di-regenerasi dari Script 1
+data/raw/raw_data_komentar.csv
+data/raw/raw_data_video.csv
+
+# Clean data intermediate — bisa di-regenerasi dari Script 2
+data/raw/clean_data_komentar.csv
+data/raw/clean_data_stemmed.csv
+data/raw/clean_data_video.csv
+data/raw/komentar_tidak_berlabel.csv
+
+# Checkpoint scraping — state lokal, tidak perlu di-track
+data/raw/progress_checkpoint.json
+
+# Dataset komentar lengkap — 6 MB+, sebaiknya disimpan di cloud
+# Uncomment baris di bawah jika ingin di-ignore:
+# data/dataset_final_komentar.csv
+# data/hasil_prediksi_lengkap.csv
+
+
+# -----------------------------------------------------------------------------
+# [3] FILE PYTHON GENERATED — tidak perlu di-track
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+
+# -----------------------------------------------------------------------------
+# [4] VIRTUAL ENVIRONMENT — jangan pernah push ke GitHub
+# -----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.env
+*.env
+
+
+# -----------------------------------------------------------------------------
+# [5] TESTING & COVERAGE ARTIFACTS
+# -----------------------------------------------------------------------------
+.hypothesis/
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+
+# -----------------------------------------------------------------------------
+# [6] IDE & EDITOR — preferensi lokal, tidak perlu di-share
+# -----------------------------------------------------------------------------
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, dll)
+.idea/
+*.iml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+
+# -----------------------------------------------------------------------------
+# [7] SISTEM OPERASI
+# -----------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+
+# -----------------------------------------------------------------------------
+# [8] LOG & TEMPORARY FILES
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+
+# -----------------------------------------------------------------------------
+# CATATAN: FILE YANG TETAP DI-PUSH
+# =============================================================================
+# ✅ app.py                              ← Aplikasi utama
+# ✅ run.py / run.bat                    ← Launcher
+# ✅ requirements.txt                    ← Dependensi (untuk Streamlit Cloud)
+# ✅ requirements-dev.txt               ← Dependensi development & testing
+# ✅ README.md                           ← Dokumentasi
+# ✅ model/model_naive_bayes.pkl         ← Model (< 1 MB, aman)
+# ✅ model/tfidf_vectorizer.pkl          ← Vectorizer (< 1 MB, aman)
+# ✅ data/dataset_final_video.csv        ← Kecil (< 1 MB)
+# ✅ data/dataset_final_per_penceramah.csv ← Kecil (< 1 MB)
+# ✅ data/ringkasan_hasil.json           ← Kecil
+# ✅ data/hasil_prediksi_lengkap.csv     ← ~10 MB (masih aman di GitHub)
+# ✅ data/dataset_final_komentar.csv     ← ~6 MB (masih aman di GitHub)
+# ✅ eda_report/*.png                    ← Grafik (< 1 MB each)
+# ✅ notebooks/*.ipynb                   ← Notebook analisis
+# ✅ tests/                              ← Unit & property tests
+# =============================================================================

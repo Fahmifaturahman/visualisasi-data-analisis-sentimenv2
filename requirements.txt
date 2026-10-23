@@ -1,11 +1,20 @@
+# =============================================================================
+# requirements.txt — Sistem Analisis Sentimen Konten Dakwah Digital
+# =============================================================================
+# Install semua dependensi:
+#   pip install -r requirements.txt
+#
+# Untuk development (tests):
+#   pip install -r requirements-dev.txt
+# =============================================================================
+
+# --- Aplikasi utama ---
 streamlit==1.61.1
 pandas==2.2.2
 numpy==1.26.4
 plotly==5.22.0
 Pillow==10.3.0
-PySastrawi==1.2.0
-scikit-learn==1.5.0
+PySastrawi==1.2.1
+scikit-learn==1.6.1
 wordcloud==1.9.3
 matplotlib==3.9.0
-hypothesis==6.104.2
-pytest==8.2.2
